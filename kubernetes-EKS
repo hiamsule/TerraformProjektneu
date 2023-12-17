@@ -7,16 +7,16 @@ provider "aws" {
 }
 
 # VPC Networking Resources
-resource "aws_vpc" "yakup-vpc" {
+resource "aws_vpc" "sule-vpc" {
   cidr_block = "10.0.0.0/16"
 
   tags = {
-    Name = "yakup-vpc"
+    Name = "sule-vpc"
   }
 }
 
 resource "aws_subnet" "private-1" {
-  vpc_id     = aws_vpc.yakup-vpc.id
+  vpc_id     = aws_vpc.sule-vpc.id
   cidr_block = "10.0.1.0/24"
   availability_zone = "eu-central-1a"
 
@@ -26,7 +26,7 @@ resource "aws_subnet" "private-1" {
 }
 
 resource "aws_subnet" "private-2" {
-  vpc_id     = aws_vpc.yakup-vpc.id
+  vpc_id     = aws_vpc.sule-vpc.id
   cidr_block = "10.0.2.0/24" 
   availability_zone = "eu-central-1b"
 
@@ -36,7 +36,7 @@ resource "aws_subnet" "private-2" {
 }
 
 # EKS Cluster Resources
-resource "aws_eks_cluster" "yakup" {
+resource "aws_eks_cluster" "sule" {
   name     = "yakupCluster"
   role_arn = aws_iam_role.eks.arn
 
