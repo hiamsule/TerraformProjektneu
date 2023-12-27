@@ -33,7 +33,7 @@ resource "aws_instance" "devops" {
   # us-west-2
   ami                    = "ami-0bf8e703278ea0245"
   instance_type          = "t2.micro"
-  key_name               = "yakup"
+  key_name               = "sule"
   private_ip             = "10.0.0.12"
   subnet_id              = aws_subnet.project_subnet.id
 }
